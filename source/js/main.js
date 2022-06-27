@@ -69,12 +69,12 @@ document.querySelector("#stopBtn").addEventListener("click", function () {
 
 document.querySelector("#growupBtn").addEventListener("click", function () {
   monkey.classList.remove("little");
-  monkey.classList.add("growup");
+  monkey.classList.toggle("growup");
 });
 
 document.querySelector("#littleBtn").addEventListener("click", function () {
   monkey.classList.remove("growup");
-  monkey.classList.add("little");
+  monkey.classList.toggle("little");
 });
 
 document.querySelector("#jumpBtn").addEventListener("click", function jump() {
@@ -86,15 +86,15 @@ document.querySelector("#jumpBtn").addEventListener("click", function jump() {
   }, 300)
 });
 
-document.body.onkeyup = function (e) {
-  if (e.keyCode == 32) {
-    if (monkey.classList != "jump") {
-      monkey.classList.add("jump");
-      setTimeout(function () {
-        monkey.classList.remove("jump");
-      }, 300)
-    }  
-  }
-}
+// document.body.onkeyup = function (e) {
+//   if (e.keyCode == 32) {
+//     if (monkey.classList != "jump") {
+//       monkey.classList.add("jump");
+//       setTimeout(function () {
+//         monkey.classList.remove("jump");
+//       }, 300)
+//     }  
+//   }
+// }
 
 
