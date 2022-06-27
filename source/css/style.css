@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.banan {
+  height: 50px;
+  width: 50px;
+}
+
+.header__title {
+  font-family: "Titan One", cursive;
+  color: rgb(8, 114, 17);
+  text-transform: uppercase;
+  font-size: 45px;
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.monkey-block {
+  position: relative;
+  border: 3px solid rgb(8, 114, 17);
+  background-color: #fff;
+  height: 300px;
+  margin-top: 5px;
+  background: url("/images/palm.png") bottom 24% left/10% no-repeat, url("/images/rock.png") bottom 12% left 5%/10% no-repeat, url("/images/palm.png") bottom 24% right 5%/10% no-repeat, url("/images/rock.png") bottom 12% right 10%/10% no-repeat, #fff;
+}
+
+@media (max-width: 720px) {
+  .monkey-block {
+    background: url("/images/palm.png") bottom 30% left/20% no-repeat, url("/images/rock.png") bottom 15% left 5%/15% no-repeat, url("/images/palm.png") bottom 30% right 5%/20% no-repeat, url("/images/rock.png") bottom 15% right 10%/15% no-repeat;
+  }
+}
+@media (max-width: 450px) {
+  .monkey-block {
+    background: url("/images/palm.png") bottom 30% left/30% no-repeat, url("/images/rock.png") bottom 15% left 5%/20% no-repeat, url("/images/palm.png") bottom 30% right 5%/30% no-repeat, url("/images/rock.png") bottom 15% right 10%/20% no-repeat;
+  }
+}
+.monkey {
+  width: 160px;
+  height: 170px;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  padding-bottom: 5px;
+}
+
+.growup {
+  width: 250px;
+  height: 260px;
+  bottom: -35px;
+}
+
+.little {
+  width: 100px;
+  height: 110px;
+  bottom: 0;
+}
+
+.mirror {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.buttons__block {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: green;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+}
+
+button:hover {
+  background-color: rgb(4, 66, 4);
+}
+
+.jump-btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66%;
+          flex: 0 0 66%;
+}
+
+.jump {
+  -webkit-animation: jump 0.5s linear;
+          animation: jump 0.5s linear;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    bottom: -20px;
+  }
+  20% {
+    bottom: -10px;
+  }
+  40% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  80% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -20px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: -20px;
+  }
+  20% {
+    bottom: -10px;
+  }
+  40% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  80% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -20px;
+  }
+}
