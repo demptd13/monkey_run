@@ -1,15 +1,13 @@
-let element = document.querySelector("#element");
-let elementWidth = parseInt(getComputedStyle(element).width);
-let containerWidth = parseInt(getComputedStyle(document.querySelector("#monkey-block")).width);
-
-let monkey = document.querySelector(".monkey");
+// Main elements
+const element = document.querySelector("#element");
+const elementWidth = parseInt(getComputedStyle(element).width);
+const containerWidth = parseInt(getComputedStyle(document.querySelector("#monkey-block")).width);
+const monkey = document.querySelector(".monkey");
 
 let direction = "right";
-
 let timerId;
 
-let body = document.querySelector("body");
-
+// Move logic
 function moveLeft() {
   element.style.left = getLeft(element) - 3 + "px";
 }
@@ -40,61 +38,70 @@ function move() {
   }
 }
 
-document.querySelector("#startBtn").addEventListener("click", function () {
+// Start action
+const startBtn = document.querySelector("#startBtn");
+
+startBtn.addEventListener("click", function () {
   if (!timerId) {
     timerId = setInterval(move, 50);
   }
 });
 
-document.querySelector("#increaseBtn").addEventListener("click", function () {
+// Speed x2 action
+const increaseBtn = document.querySelector("#increaseBtn");
+
+increaseBtn.addEventListener("click", function () {
   if (timerId) {
     clearInterval(timerId);
     timerId = setInterval(move, 25);
   }
 });
 
-document.querySelector("#decreaseBtn").addEventListener("click", function () {
+// Slow action 
+const descreaseBtn = document.querySelector("#decreaseBtn");
+
+descreaseBtn.addEventListener("click", function () {
   if (timerId) {
     clearInterval(timerId);
     timerId = setInterval(move, 50);
   }
 });
 
-document.querySelector("#stopBtn").addEventListener("click", function () {
+// Stop action
+const stopBtn = document.querySelector("#stopBtn");
+
+stopBtn.addEventListener("click", function () {
   if (timerId) {
     clearInterval(timerId);
     timerId = null;
   }
 });
 
-document.querySelector("#growupBtn").addEventListener("click", function () {
+// Grow Up action 
+const growUpBtn = document.querySelector("#growupBtn");
+
+growUpBtn.addEventListener("click", function () {
   monkey.classList.remove("little");
   monkey.classList.toggle("growup");
 });
 
-document.querySelector("#littleBtn").addEventListener("click", function () {
+// Little action
+const littleBtn = document.querySelector("#littleBtn");
+
+littleBtn.addEventListener("click", function () {
   monkey.classList.remove("growup");
   monkey.classList.toggle("little");
 });
 
-document.querySelector("#jumpBtn").addEventListener("click", function jump() {
+// Jump action
+function jump() {
   if (monkey.classList != "jump") {
     monkey.classList.toggle("jump");
   }
   setTimeout(function () {
     monkey.classList.remove("jump")
   }, 300)
-});
+}
 
-// document.body.onkeyup = function (e) {
-//   if (e.keyCode == 32) {
-//     if (monkey.classList != "jump") {
-//       monkey.classList.add("jump");
-//       setTimeout(function () {
-//         monkey.classList.remove("jump");
-//       }, 300)
-//     }  
-//   }
-// }
-
-
+const jumpBtn = document.querySelector("#jumpBtn");
+jumpBtn.addEventListener("click", jump);
