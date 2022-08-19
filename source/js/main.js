@@ -1,11 +1,11 @@
 // Main elements
-const element = document.querySelector("#element");
-const elementWidth = parseInt(getComputedStyle(element).width);
-const containerWidth = parseInt(getComputedStyle(document.querySelector("#monkey-block")).width);
-const monkey = document.querySelector(".monkey");
+const element = document.querySelector("#element"),
+  elementWidth = parseInt(getComputedStyle(element).width),
+  containerWidth = parseInt(getComputedStyle(document.querySelector("#monkey-block")).width),
+  monkey = document.querySelector(".monkey");
 
-let direction = "right";
-let timerId;
+let direction = "right",
+  timerId;
 
 // Move logic
 function moveLeft() {
